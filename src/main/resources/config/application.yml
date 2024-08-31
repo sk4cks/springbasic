@@ -1,0 +1,5 @@
+spring:
+  application: springbasic
+
+server:
+  port: 8580
