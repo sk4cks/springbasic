@@ -25,10 +25,8 @@ public class SpringbasicApplication {
 		return new DispatcherServlet();
 	}
 	public static void main(String[] args) {
-		MySpringApplication.run(SpringbasicApplication.class, args);
-
-
-//		SpringApplication.run(SpringbasicApplication.class, args);
+//		MySpringApplication.run(SpringbasicApplication.class, args);
+		SpringApplication.run(SpringbasicApplication.class, args);
 	}
 
 
