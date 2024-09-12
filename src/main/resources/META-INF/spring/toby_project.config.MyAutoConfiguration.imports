@@ -1,2 +1,3 @@
 toby_project.config.autoconfig.TomcatWebServerConfig
+toby_project.config.autoconfig.JettyWebServerConfig
 toby_project.config.autoconfig.DispatcherServletConfig
