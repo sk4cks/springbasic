@@ -1,4 +1,4 @@
-package toby_project.springbasic.hello.controller;
+package toby_project.springbasic.hello.service;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
