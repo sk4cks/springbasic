@@ -1,3 +1,4 @@
+toby_project.config.autoconfig.PropertyPostProcessorConfig
 toby_project.config.autoconfig.PropertyPlaceholderConfig
 toby_project.config.autoconfig.TomcatWebServerConfig
 toby_project.config.autoconfig.JettyWebServerConfig
