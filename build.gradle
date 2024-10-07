@@ -6,6 +6,7 @@ plugins {
 
 group = 'toby-project'
 version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
 
 java {
 	toolchain {
@@ -22,6 +23,8 @@ dependencies {
 		//exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
 	}
 	implementation 'org.springframework.boot:spring-boot-starter-jetty'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	runtimeOnly 'com.h2database:h2:2.1.214'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

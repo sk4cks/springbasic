@@ -1,3 +1,4 @@
+toby_project.config.autoconfig.DataSourceConfig
 toby_project.config.autoconfig.PropertyPostProcessorConfig
 toby_project.config.autoconfig.PropertyPlaceholderConfig
 toby_project.config.autoconfig.TomcatWebServerConfig
