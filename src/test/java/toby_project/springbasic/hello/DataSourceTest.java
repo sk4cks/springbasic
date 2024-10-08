@@ -12,9 +12,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = SpringbasicApplication.class)
-@TestPropertySource("classpath:/config/application.yml")
+@HellobootTest
 public class DataSourceTest {
     @Autowired DataSource dataSource;
 
