@@ -1,25 +1,30 @@
 package toby_project.config.autoconfig;
 
+import org.eclipse.jetty.server.Server;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory;
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Condition;
-import org.springframework.context.annotation.ConditionContext;
-import org.springframework.context.annotation.Conditional;
-import org.springframework.core.type.AnnotatedTypeMetadata;
-import org.springframework.util.ClassUtils;
-import toby_project.config.ConditionalMyOnClass;
-import toby_project.config.MyAutoConfiguration;
 
-@MyAutoConfiguration
-@ConditionalMyOnClass("org.eclipse.jetty.server.Server")
+@AutoConfiguration
+@ConditionalOnClass(Server.class)
+@EnableConfigurationProperties(ServerProperties.class)
 public class JettyWebServerConfig {
-    @Bean("jettyWebServerFactory")
+
+    @Bean
     @ConditionalOnMissingBean
-    public ServletWebServerFactory serverFactory(){
-        return new JettyServletWebServerFactory();
+    public ServletWebServerFactory serverFactory(ServerProperties properties){
+        JettyServletWebServerFactory factory = new JettyServletWebServerFactory();
+
+        factory.setContextPath(properties.getServlet().getContextPath());
+        factory.setPort(properties.getPort());
+
+        return factory;
     }
 
 }
